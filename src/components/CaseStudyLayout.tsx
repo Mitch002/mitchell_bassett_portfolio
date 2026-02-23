@@ -8,13 +8,9 @@ import type { CaseStudy } from "@/content/work";
 
 interface CaseStudyLayoutProps {
   study: CaseStudy;
-  diagram?: ReactNode;
 }
 
-export default function CaseStudyLayout({
-  study,
-  diagram,
-}: CaseStudyLayoutProps) {
+export default function CaseStudyLayout({ study }: CaseStudyLayoutProps) {
   return (
     <div className="pt-24 pb-16">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -57,7 +53,7 @@ export default function CaseStudyLayout({
           </motion.div>
         </AnimatedSection>
 
-        {/* A) Overview */}
+        {/* Overview */}
         <AnimatedSection>
           <motion.div variants={itemVariants} className="mb-16">
             <SectionLabel>Overview</SectionLabel>
@@ -67,46 +63,94 @@ export default function CaseStudyLayout({
           </motion.div>
         </AnimatedSection>
 
-        {/* B) Context */}
-        <AnimatedSection>
-          <motion.div variants={itemVariants} className="mb-16">
-            <SectionLabel>Context</SectionLabel>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="rounded-xl bg-white/[0.02] border border-white/10 p-6">
-                <p className="text-[10px] font-mono text-mint-neon uppercase tracking-widest mb-3">
-                  Stage
-                </p>
-                <p className="text-sm text-gray-300">{study.context.stage}</p>
-              </div>
-              <div className="rounded-xl bg-white/[0.02] border border-white/10 p-6">
-                <p className="text-[10px] font-mono text-mint-neon uppercase tracking-widest mb-3">
-                  Constraints
-                </p>
-                <ul className="space-y-2">
-                  {study.context.constraints.map((c) => (
+        {/* Objective (optional) */}
+        {study.objective && (
+          <AnimatedSection>
+            <motion.div variants={itemVariants} className="mb-16">
+              <SectionLabel>Objective</SectionLabel>
+              <p className="text-base text-gray-300 leading-relaxed">
+                {study.objective}
+              </p>
+            </motion.div>
+          </AnimatedSection>
+        )}
+
+        {/* Dynamic Sections */}
+        {study.sections.map((section, idx) => (
+          <AnimatedSection key={idx}>
+            <motion.div variants={itemVariants} className="mb-16">
+              <SectionLabel>
+                {idx + 1}. {section.title}
+              </SectionLabel>
+              <p className="text-base text-gray-300 leading-relaxed mb-4">
+                {section.content}
+              </p>
+
+              {/* Section-level bullets */}
+              {section.bullets && section.bullets.length > 0 && (
+                <ul className="space-y-2 mb-4">
+                  {section.bullets.map((bullet, bi) => (
                     <li
-                      key={c}
+                      key={bi}
                       className="flex items-start gap-2 text-sm text-gray-400"
                     >
-                      <span className="w-1 h-1 rounded-full bg-gray-600 mt-2 flex-shrink-0" />
-                      {c}
+                      <span className="w-1 h-1 rounded-full bg-indigo-electric mt-2 flex-shrink-0" />
+                      {bullet}
                     </li>
                   ))}
                 </ul>
-              </div>
-            </div>
-            <div className="mt-4 rounded-xl bg-white/[0.02] border border-white/10 p-6">
-              <p className="text-[10px] font-mono text-mint-neon uppercase tracking-widest mb-3">
-                Goals
-              </p>
-              <ul className="space-y-2">
-                {study.context.goals.map((g) => (
+              )}
+
+              {/* Subsections */}
+              {section.subsections && section.subsections.length > 0 && (
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                  {section.subsections.map((sub, si) => (
+                    <div
+                      key={si}
+                      className="rounded-xl bg-white/[0.02] border border-white/10 p-6"
+                    >
+                      <p className="text-[10px] font-mono text-mint-neon uppercase tracking-widest mb-3">
+                        {sub.title}
+                      </p>
+                      {sub.content && (
+                        <p className="text-sm text-gray-300 leading-relaxed mb-3">
+                          {sub.content}
+                        </p>
+                      )}
+                      {sub.bullets && sub.bullets.length > 0 && (
+                        <ul className="space-y-2">
+                          {sub.bullets.map((b, sbi) => (
+                            <li
+                              key={sbi}
+                              className="flex items-start gap-2 text-sm text-gray-400"
+                            >
+                              <span className="w-1 h-1 rounded-full bg-mint-neon mt-2 flex-shrink-0" />
+                              {b}
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              )}
+            </motion.div>
+          </AnimatedSection>
+        ))}
+
+        {/* Why This Demonstrates GTM Engineering */}
+        <AnimatedSection>
+          <motion.div variants={itemVariants} className="mb-16">
+            <SectionLabel>Why This Demonstrates GTM Engineering</SectionLabel>
+            <div className="rounded-xl bg-white/[0.02] border border-white/10 p-6">
+              <ul className="space-y-2.5">
+                {study.demonstrates.map((item, i) => (
                   <li
-                    key={g}
-                    className="flex items-start gap-2 text-sm text-gray-400"
+                    key={i}
+                    className="flex items-start gap-2 text-sm text-gray-300 leading-relaxed"
                   >
                     <span className="w-1 h-1 rounded-full bg-indigo-electric mt-2 flex-shrink-0" />
-                    {g}
+                    {item}
                   </li>
                 ))}
               </ul>
@@ -114,167 +158,31 @@ export default function CaseStudyLayout({
           </motion.div>
         </AnimatedSection>
 
-        {/* C) The System */}
+        {/* Strategic Takeaway */}
         <AnimatedSection>
-          <motion.div variants={itemVariants} className="mb-16">
-            <SectionLabel>The System</SectionLabel>
-            <p className="text-base text-gray-300 leading-relaxed mb-6">
-              {study.systemDescription}
+          <motion.div variants={itemVariants}>
+            <SectionLabel>Strategic Takeaway</SectionLabel>
+            <p className="text-base text-gray-300 leading-relaxed mb-4">
+              {study.strategicTakeaway.intro}
             </p>
-            {diagram && (
-              <div className="rounded-xl bg-white/[0.02] border border-white/10 p-4">
-                {diagram}
-              </div>
-            )}
-          </motion.div>
-        </AnimatedSection>
-
-        {/* D) What I Built */}
-        <AnimatedSection>
-          <motion.div variants={itemVariants} className="mb-16">
-            <SectionLabel>What I Built</SectionLabel>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {study.whatIBuilt.map((group) => (
-                <div
-                  key={group.category}
-                  className="rounded-xl bg-white/[0.02] border border-white/10 p-6"
-                >
-                  <p className="text-[10px] font-mono text-mint-neon uppercase tracking-widest mb-4">
-                    {group.category}
-                  </p>
-                  <ul className="space-y-2.5">
-                    {group.items.map((item) => (
-                      <li
-                        key={item}
-                        className="flex items-start gap-2 text-sm text-gray-400 leading-relaxed"
-                      >
-                        <span className="w-1 h-1 rounded-full bg-indigo-electric mt-2 flex-shrink-0" />
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
-          </motion.div>
-        </AnimatedSection>
-
-        {/* E) Experiments / Plays */}
-        <AnimatedSection>
-          <motion.div variants={itemVariants} className="mb-16">
-            <SectionLabel>Experiments &amp; Plays</SectionLabel>
-            <div className="space-y-4">
-              {study.experiments.map((exp) => (
-                <div
-                  key={exp.title}
-                  className="rounded-xl bg-white/[0.02] border border-white/10 p-6"
-                >
-                  <h4 className="text-sm font-bold text-white mb-2">
-                    {exp.title}
-                  </h4>
-                  <p className="text-sm text-gray-400 leading-relaxed">
-                    {exp.description}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </motion.div>
-        </AnimatedSection>
-
-        {/* F) Results */}
-        <AnimatedSection>
-          <motion.div variants={itemVariants} className="mb-16">
-            <SectionLabel>Results</SectionLabel>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="rounded-xl bg-white/[0.02] border border-white/10 p-6">
-                <p className="text-[10px] font-mono text-mint-neon uppercase tracking-widest mb-4">
-                  Metrics
-                </p>
-                <ul className="space-y-2.5">
-                  {study.results.metrics.map((m) => (
-                    <li
-                      key={m}
-                      className="flex items-start gap-2 text-sm text-gray-300 leading-relaxed"
-                    >
-                      <span className="w-1 h-1 rounded-full bg-mint-neon mt-2 flex-shrink-0" />
-                      {m}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div className="rounded-xl bg-white/[0.02] border border-white/10 p-6">
-                <p className="text-[10px] font-mono text-mint-neon uppercase tracking-widest mb-4">
-                  Qualitative
-                </p>
-                <ul className="space-y-2.5">
-                  {study.results.qualitative.map((q) => (
-                    <li
-                      key={q}
-                      className="flex items-start gap-2 text-sm text-gray-300 leading-relaxed"
-                    >
-                      <span className="w-1 h-1 rounded-full bg-mint-neon mt-2 flex-shrink-0" />
-                      {q}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </motion.div>
-        </AnimatedSection>
-
-        {/* G) Learnings */}
-        <AnimatedSection>
-          <motion.div variants={itemVariants} className="mb-16">
-            <SectionLabel>Learnings</SectionLabel>
-            <div className="space-y-4">
-              {study.learnings.map((learning, i) => (
-                <div
-                  key={i}
-                  className="border-l-2 border-indigo-electric/30 pl-4"
-                >
-                  <p className="text-sm text-gray-400 leading-relaxed">
-                    {learning}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </motion.div>
-        </AnimatedSection>
-
-        {/* H) If I Had 30 More Days */}
-        <AnimatedSection>
-          <motion.div variants={itemVariants} className="mb-16">
-            <SectionLabel>If I Had 30 More Days</SectionLabel>
-            <ul className="space-y-3">
-              {study.nextIterations.map((iter) => (
+            <ul className="space-y-2.5 mb-4">
+              {study.strategicTakeaway.points.map((point, i) => (
                 <li
-                  key={iter}
+                  key={i}
                   className="flex items-start gap-3 text-sm text-gray-400 leading-relaxed"
                 >
                   <span className="w-5 h-5 rounded-md bg-white/[0.04] border border-white/10 flex items-center justify-center flex-shrink-0 mt-0.5">
                     <span className="w-1.5 h-1.5 rounded-sm bg-indigo-electric/40" />
                   </span>
-                  {iter}
+                  {point}
                 </li>
               ))}
             </ul>
-          </motion.div>
-        </AnimatedSection>
-
-        {/* I) Tooling */}
-        <AnimatedSection>
-          <motion.div variants={itemVariants}>
-            <SectionLabel>Tooling</SectionLabel>
-            <div className="flex flex-wrap gap-2">
-              {study.tooling.map((tool) => (
-                <span
-                  key={tool}
-                  className="px-3 py-1.5 rounded-lg text-xs font-mono text-gray-300 bg-white/[0.03] border border-white/10"
-                >
-                  {tool}
-                </span>
-              ))}
-            </div>
+            {study.strategicTakeaway.conclusion && (
+              <p className="text-base text-gray-300 leading-relaxed italic border-l-2 border-mint-neon/30 pl-4">
+                {study.strategicTakeaway.conclusion}
+              </p>
+            )}
           </motion.div>
         </AnimatedSection>
       </div>

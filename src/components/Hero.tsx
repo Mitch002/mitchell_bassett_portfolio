@@ -96,7 +96,7 @@ export default function Hero() {
       >
         <motion.div variants={itemVariants}>
           <span className="inline-block px-4 py-1.5 mb-6 rounded-full text-xs font-mono font-medium text-mint-neon border border-mint-neon/30 bg-mint-neon/5">
-            Growth Marketing &times; AI Automation
+            GTM Systems &bull; Automation &bull; Execution
           </span>
         </motion.div>
 
@@ -104,16 +104,16 @@ export default function Hero() {
           variants={itemVariants}
           className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight"
         >
-          Growth Marketing Meets{" "}
-          <span className="text-gradient">AI Automation.</span>
+          Growth Systems for{" "}
+          <span className="text-gradient">Modern GTM.</span>
         </motion.h1>
 
         <motion.p
           variants={itemVariants}
           className="mt-6 text-base sm:text-lg md:text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed"
         >
-          I build end-to-end GTM systems: lifecycle, automation, reporting, and
-          market-ready assets.
+          I build end-to-end GTM systems: lifecycle, automation,
+          experimentation, reporting, and market-ready execution.
         </motion.p>
 
         <motion.div

@@ -13,10 +13,10 @@ export const FRAMEWORK: FrameworkItem[] = [
     title: "Demand Capture & Acquisition",
     message: "If someone needs what you do today, can they find you?",
     includes: [
-      "Paid testing and iteration",
+      "Channel validation and iteration",
       "Search intent and SEO foundations",
       "Landing page design and optimization",
-      "Content distribution and channel selection",
+      "Asset distribution and channel selection",
     ],
     successMetric:
       "Qualified traffic increases without proportional spend increases",
@@ -55,7 +55,7 @@ export const FRAMEWORK: FrameworkItem[] = [
       "Partnership and referral loop design",
       "Stakeholder enablement materials",
       "Systemized outreach workflows",
-      "Community-driven growth channels",
+      "Audience signal monitoring and growth channels",
     ],
     callout: "We systemize relationships instead of hoping for them.",
     successMetric: "Referral and partner-sourced pipeline grows quarter over quarter",

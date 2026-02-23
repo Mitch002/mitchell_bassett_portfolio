@@ -1,5 +1,6 @@
 export interface AutomationItem {
   title: string;
+  outcome: string;
   impact: string;
   status: "Deployed" | "Concept";
   steps: string[];
@@ -9,6 +10,7 @@ export interface AutomationItem {
 export const AUTOMATIONS: AutomationItem[] = [
   {
     title: "Automated Weekly GTM Reporting",
+    outcome: "Turns raw performance data into a weekly decision-ready brief.",
     impact:
       "Eliminated manual reporting by pulling metrics, transforming data, and delivering exec summaries automatically.",
     status: "Deployed",
@@ -22,6 +24,7 @@ export const AUTOMATIONS: AutomationItem[] = [
   },
   {
     title: "Lifecycle Follow-up & Routing",
+    outcome: "Ensures every lead gets fast follow-up and correct routing.",
     impact:
       "Automated the path from form submission to owner notification, reducing lead response time and manual triage.",
     status: "Deployed",
@@ -35,6 +38,7 @@ export const AUTOMATIONS: AutomationItem[] = [
   },
   {
     title: "AI GTM Signal Monitor",
+    outcome: "Converts market noise into structured signals and themes.",
     impact:
       "Surfaces competitive moves, product reviews, and social mentions into a daily brief — no manual scanning required.",
     status: "Concept",
@@ -48,6 +52,7 @@ export const AUTOMATIONS: AutomationItem[] = [
   },
   {
     title: "Trial-to-Sales Trigger Router",
+    outcome: "Routes high-intent users to sales and keeps everyone else nurtured.",
     impact:
       "Detects product usage patterns during trial and routes high-intent users to sales or nurture sequences automatically.",
     status: "Concept",

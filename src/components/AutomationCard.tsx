@@ -36,6 +36,13 @@ export default function AutomationCard({ item }: AutomationCardProps) {
           </span>
         </div>
 
+        {/* Outcome */}
+        {item.outcome && (
+          <p className="text-[11px] font-mono text-mint-neon mb-3">
+            <span className="text-gray-500">Outcome:</span> {item.outcome}
+          </p>
+        )}
+
         {/* Title */}
         <h3 className="text-lg font-bold text-white mb-2 tracking-tight">
           {item.title}

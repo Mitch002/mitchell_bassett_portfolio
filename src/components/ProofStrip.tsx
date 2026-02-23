@@ -1,21 +1,24 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { TrendingUp, Workflow, MessageSquareText } from "lucide-react";
+import { GitBranch, Workflow, Target } from "lucide-react";
 import AnimatedSection, { itemVariants } from "./AnimatedSection";
 
 const PROOF_POINTS = [
   {
-    icon: TrendingUp,
-    text: "64% lift in paid user acquisition (early testing)",
+    icon: GitBranch,
+    title: "Lifecycle + Routing Infrastructure",
+    body: "Defined lifecycle stages, routing rules, and follow-up logic to keep execution clean and measurable.",
   },
   {
     icon: Workflow,
-    text: "n8n + Python automation for monitoring, distribution, and reporting",
+    title: "Automation That Reduces Manual Ops",
+    body: "Built n8n + Python workflows for monitoring, reporting, and operational handoffs across tools.",
   },
   {
-    icon: MessageSquareText,
-    text: "Positioning + messaging frameworks to support early launches",
+    icon: Target,
+    title: "Positioning → Execution Alignment",
+    body: "Created messaging frameworks and asset readiness systems to support launches and early traction.",
   },
 ];
 
@@ -27,16 +30,21 @@ export default function ProofStrip() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {PROOF_POINTS.map((point) => (
               <motion.div
-                key={point.text}
+                key={point.title}
                 variants={itemVariants}
                 className="flex items-start gap-4 p-5 rounded-xl bg-white/[0.02] border border-white/5"
               >
                 <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-indigo-electric/10 border border-indigo-electric/20 flex items-center justify-center">
                   <point.icon size={18} className="text-indigo-electric" />
                 </div>
-                <p className="text-sm text-gray-300 leading-relaxed font-medium">
-                  {point.text}
-                </p>
+                <div>
+                  <p className="text-sm font-bold text-white mb-1">
+                    {point.title}
+                  </p>
+                  <p className="text-xs text-gray-400 leading-relaxed">
+                    {point.body}
+                  </p>
+                </div>
               </motion.div>
             ))}
           </div>

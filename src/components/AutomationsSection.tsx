@@ -12,8 +12,8 @@ export default function AutomationsSection() {
         <AnimatedSection>
           <SectionHeading
             label="Systems & Automations"
-            title="Built to Run Without Me"
-            description="GTM automation examples — deployed systems I built, plus concept prototypes that demonstrate how I think about workflow design."
+            title="Built to Scale With a Team"
+            description="I build systems teams can operate confidently — with clear logic, clean handoffs, and measurable outputs."
           />
         </AnimatedSection>
 

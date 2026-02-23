@@ -12,7 +12,7 @@ export default function HowIThink() {
         <AnimatedSection>
           <SectionHeading
             label="How I Think"
-            title="My GTM Operating System"
+            title="The 4 Systems Behind Sustainable Growth"
             description="Four systems that work together. Applicable across SaaS, services, and marketplaces — not just one vertical."
           />
         </AnimatedSection>
