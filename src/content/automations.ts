@@ -5,22 +5,24 @@ export interface AutomationItem {
   status: "Deployed" | "Concept";
   steps: string[];
   tags: string[];
+  wide?: boolean;
 }
 
 export const AUTOMATIONS: AutomationItem[] = [
   {
-    title: "Automated Weekly GTM Reporting",
-    outcome: "Turns raw performance data into a weekly decision-ready brief.",
+    title: "Automated Lead Finder & Enrichment Engine",
+    outcome: "Turns target criteria into scored, enriched leads with ready-to-send outreach.",
     impact:
-      "Eliminated manual reporting by pulling metrics, transforming data, and delivering exec summaries automatically.",
+      "Scrapes leads via API, enriches with additional data, generates custom outreach messages, scores by fit, and can send cold outreach directly — eliminating manual prospecting.",
     status: "Deployed",
     steps: [
-      "Pull GA4 + campaign metrics via APIs",
-      "Transform and normalize with Python",
-      "Generate formatted summary with highlights + next actions",
-      "Deliver to Notion, Slack, and email",
+      "Scrape leads for people or businesses via Apify APIs",
+      "Enrich leads with additional data through secondary API calls",
+      "Score all leads based on scraped information and fit criteria",
+      "Generate custom outreach messages per lead",
+      "Send cold outreach directly or notify internal team",
     ],
-    tags: ["n8n", "Python", "GA4", "Reporting"],
+    tags: ["Python", "Apify APIs", "Lead Gen", "Outreach"],
   },
   {
     title: "Lifecycle Follow-up & Routing",
@@ -29,12 +31,12 @@ export const AUTOMATIONS: AutomationItem[] = [
       "Automated the path from form submission to owner notification, reducing lead response time and manual triage.",
     status: "Deployed",
     steps: [
-      "Capture form submission + enrich via API",
+      "Capture form submission",
       "Categorize lead by segment and intent signals",
       "Route notification to appropriate owner",
       "Create follow-up task with context in CRM",
     ],
-    tags: ["HubSpot", "n8n", "Automation", "Lifecycle"],
+    tags: ["GoHighLevel", "Automation", "Lifecycle"],
   },
   {
     title: "AI GTM Signal Monitor",
@@ -63,5 +65,20 @@ export const AUTOMATIONS: AutomationItem[] = [
       "Log outcomes for model refinement",
     ],
     tags: ["Lifecycle", "Automation", "CRM", "AI"],
+  },
+  {
+    title: "Automated Weekly GTM Reporting",
+    outcome: "Turns raw performance data into a weekly decision-ready brief.",
+    impact:
+      "Pulls metrics from analytics and campaign platforms, transforms and normalizes data, generates a formatted summary with highlights and next actions, and delivers to Notion, Slack, and email — eliminating manual reporting.",
+    status: "Concept",
+    steps: [
+      "Pull GA4 + campaign metrics via APIs",
+      "Transform and normalize with Python",
+      "Generate formatted summary with highlights + next actions",
+      "Deliver to Notion, Slack, and email",
+    ],
+    tags: ["Python", "GA4", "Reporting", "Automation"],
+    wide: true,
   },
 ];

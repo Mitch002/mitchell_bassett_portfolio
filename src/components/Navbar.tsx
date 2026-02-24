@@ -32,7 +32,7 @@ export default function Navbar() {
             {NAV_LINKS.map((link) => (
               <a
                 key={link.label}
-                href={isHome ? link.href : `/${link.href}`}
+                href={link.href.startsWith("/") ? link.href : isHome ? link.href : `/${link.href}`}
                 className="text-sm text-gray-400 hover:text-white transition-colors duration-200 font-medium"
               >
                 {link.label}
@@ -73,7 +73,7 @@ export default function Navbar() {
               {NAV_LINKS.map((link) => (
                 <a
                   key={link.label}
-                  href={isHome ? link.href : `/${link.href}`}
+                  href={link.href.startsWith("/") ? link.href : isHome ? link.href : `/${link.href}`}
                   onClick={() => setMobileMenuOpen(false)}
                   className="block text-sm text-gray-400 hover:text-white transition-colors duration-200 font-medium py-2"
                 >

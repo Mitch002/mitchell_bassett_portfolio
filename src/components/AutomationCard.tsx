@@ -15,7 +15,7 @@ export default function AutomationCard({ item }: AutomationCardProps) {
   return (
     <motion.div
       variants={itemVariants}
-      className="group relative rounded-2xl overflow-hidden bg-white/[0.02] border border-white/10 p-6 hover:border-indigo-electric/30 hover:bg-white/[0.04] transition-all duration-500"
+      className={`group relative rounded-2xl overflow-hidden bg-white/[0.02] border border-white/10 p-6 hover:border-indigo-electric/30 hover:bg-white/[0.04] transition-all duration-500${item.wide ? " md:col-span-2" : ""}`}
     >
       <div className="relative z-10">
         {/* Status badge */}
