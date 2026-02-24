@@ -23,7 +23,7 @@ export default function Navbar() {
           {/* Logo / Name */}
           <a href="/" className="flex items-center gap-2">
             <span className="text-lg font-bold text-white tracking-tight">
-              Mitchell<span className="text-indigo-electric">.</span>
+              Mitchell Bassett<span className="text-indigo-electric">.</span>
             </span>
           </a>
 
@@ -39,7 +39,8 @@ export default function Navbar() {
               </a>
             ))}
             <a
-              href="#"
+              href="/Mitchell_Bassett_GTM_Operations_AI_Automation_Resume.pdf"
+              download
               className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-indigo-electric text-white text-sm font-semibold shadow-glow-indigo hover:shadow-glow-indigo-lg hover:scale-105 transition-all duration-300"
             >
               <Download size={14} />
@@ -80,7 +81,8 @@ export default function Navbar() {
                 </a>
               ))}
               <a
-                href="#"
+                href="/Mitchell_Bassett_GTM_Operations_AI_Automation_Resume.pdf"
+                download
                 className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-indigo-electric text-white text-sm font-semibold shadow-glow-indigo mt-2"
               >
                 <Download size={14} />

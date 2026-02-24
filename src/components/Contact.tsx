@@ -38,7 +38,7 @@ export default function Contact() {
               Email Me
             </a>
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/mitchell-bassett-50ab791b8/"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full border border-white/20 text-white font-semibold text-sm hover:border-indigo-electric/50 hover:shadow-glow-indigo transition-all duration-300"

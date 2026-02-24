@@ -138,7 +138,8 @@ export default function Hero() {
             Let&apos;s Talk
           </a>
           <a
-            href="#"
+            href="/Mitchell_Bassett_GTM_Operations_AI_Automation_Resume.pdf"
+            download
             className="inline-flex items-center gap-2 text-sm text-gray-500 hover:text-gray-300 transition-colors duration-200 font-medium"
           >
             <Download size={14} />

@@ -9,7 +9,7 @@ export const NAV_LINKS = [
 export const SOCIAL_LINKS = [
   {
     label: "LinkedIn",
-    href: "https://linkedin.com",
+    href: "https://www.linkedin.com/in/mitchell-bassett-50ab791b8/",
     icon: "Linkedin",
   },
   {
