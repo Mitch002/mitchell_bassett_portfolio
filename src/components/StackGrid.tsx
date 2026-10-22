@@ -14,7 +14,7 @@ export default function StackGrid() {
           <SectionHeading
             label="Stack"
             title="What I Work With"
-            description="I don't just use tools — I build systems that connect them."
+            description="The strategy, platforms, and technical work behind my marketing projects."
           />
         </AnimatedSection>
 
@@ -87,6 +87,11 @@ export default function StackGrid() {
               ))}
             </div>
           </motion.div>
+          <p className="mt-4 text-xs text-gray-500 leading-relaxed max-w-3xl">
+            Depth varies by platform. GoHighLevel is my strongest CRM specialization;
+            additional technical exposure includes collaborative planning, experimentation,
+            and troubleshooting.
+          </p>
         </AnimatedSection>
       </div>
     </section>

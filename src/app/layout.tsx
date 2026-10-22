@@ -15,21 +15,23 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Mitchell Bassett | Growth Marketing & AI Automation Specialist",
+  metadataBase: new URL("https://mitchellbassett.com"),
+  title: "Mitchell Bassett | Growth Marketing & Marketing Operations",
   description:
-    "I build end-to-end GTM systems: lifecycle, automation, reporting, and market-ready assets. Growth Marketing & AI Automation Specialist.",
+    "Growth marketing and marketing operations professional with experience in paid acquisition, CRM automation, attribution, and AI-assisted workflows.",
   keywords: [
     "growth marketing",
     "AI automation",
-    "GTM operations",
-    "marketing ops",
+    "marketing operations",
+    "CRM automation",
+    "conversion tracking",
     "n8n",
     "growth engineering",
   ],
   openGraph: {
-    title: "Mitchell Bassett | Growth Marketing & AI Automation",
+    title: "Mitchell Bassett | Growth Marketing & Marketing Operations",
     description:
-      "I build end-to-end GTM systems: lifecycle, automation, reporting, and market-ready assets.",
+      "Growth marketing, CRM automation, paid acquisition, and marketing operations experience.",
     type: "website",
   },
 };

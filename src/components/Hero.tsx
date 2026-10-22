@@ -96,7 +96,7 @@ export default function Hero() {
       >
         <motion.div variants={itemVariants}>
           <span className="inline-block px-4 py-1.5 mb-6 rounded-full text-xs font-mono font-medium text-mint-neon border border-mint-neon/30 bg-mint-neon/5">
-            GTM Systems &bull; Automation &bull; Execution
+            Growth marketing &bull; Marketing operations &bull; Automation
           </span>
         </motion.div>
 
@@ -104,16 +104,17 @@ export default function Hero() {
           variants={itemVariants}
           className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight"
         >
-          Growth Systems for{" "}
-          <span className="text-gradient">Modern GTM.</span>
+          Marketing strategy that{" "}
+          <span className="text-gradient">works all the way through.</span>
         </motion.h1>
 
         <motion.p
           variants={itemVariants}
           className="mt-6 text-base sm:text-lg md:text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed"
         >
-          I build end-to-end GTM systems: lifecycle, automation,
-          experimentation, reporting, and market-ready execution.
+          I&apos;m Mitchell Bassett. I connect acquisition strategy with the
+          landing pages, CRM workflows, attribution, and follow-up that turn
+          interest into measurable business outcomes.
         </motion.p>
 
         <motion.div
@@ -121,10 +122,10 @@ export default function Hero() {
           className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4"
         >
           <a
-            href="#work"
+            href="/experience"
             className="group inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-indigo-electric text-white font-semibold text-sm shadow-glow-indigo hover:shadow-glow-indigo-lg hover:scale-105 transition-all duration-300"
           >
-            View My Proof
+            View My Experience
             <ArrowRight
               size={16}
               className="group-hover:translate-x-1 transition-transform"

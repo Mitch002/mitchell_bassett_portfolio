@@ -14,7 +14,7 @@ export default function Contact() {
               Contact
             </span>
             <h2 className="mt-3 text-3xl sm:text-4xl font-bold text-white tracking-tight">
-              Let&apos;s Build Something
+              Let&apos;s Talk About Your Team
             </h2>
           </motion.div>
 
@@ -22,8 +22,9 @@ export default function Contact() {
             variants={itemVariants}
             className="mt-5 text-base text-gray-400 leading-relaxed max-w-xl mx-auto"
           >
-            If you&apos;re building GTM systems and want automation +
-            execution, let&apos;s talk.
+            I&apos;m interested in growth marketing, marketing operations,
+            CRM, and marketing automation roles. If my experience fits what
+            your team needs, I&apos;d welcome a conversation.
           </motion.p>
 
           <motion.div
@@ -55,7 +56,7 @@ export default function Contact() {
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
               </span>
               <span className="text-xs text-gray-400 font-mono">
-                Open for select 2026 collaborations
+                Open to full-time opportunities
               </span>
             </div>
           </motion.div>

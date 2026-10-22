@@ -5,51 +5,50 @@ export interface Capability {
 
 export const CAPABILITIES: Capability[] = [
   {
-    title: "GTM Systems Design",
+    title: "Growth Strategy & Acquisition",
     bullets: [
-      "Build end-to-end GTM infrastructure: acquisition → conversion → retention",
-      "Define lifecycle stages, handoffs, and qualification criteria",
+      "Market research, positioning, offer development, and channel planning",
+      "Paid campaign strategy, creative testing, and lead generation",
     ],
   },
   {
     title: "Lifecycle, CRM & Routing",
     bullets: [
-      "CRM setup + pipeline structure",
-      "Lead capture → follow-up → nurture → assignment logic",
-      "Missed lead recovery, reactivation, and scoring triggers",
+      "GoHighLevel workflows, pipeline structure, and segmentation",
+      "Lead capture, qualification, follow-up, nurture, and appointment logic",
+      "Email and SMS sequences, routing, and reactivation",
     ],
   },
   {
     title: "Automation & AI Workflows",
     bullets: [
-      "Workflow orchestration with n8n",
-      "Python for data cleanup, enrichment, transforms",
-      "AI-assisted summarization, tagging, drafting, and reporting",
-      "Webhooks & API integrations",
+      "n8n and Python workflows for marketing operations",
+      "AI-assisted research, monitoring, content, and reporting",
+      "Webhooks and API integrations",
     ],
   },
   {
     title: "Measurement & Experimentation",
     bullets: [
-      "Event + funnel thinking (what to track, why it matters)",
-      "UTM discipline, conversion tracking, weekly reporting loops",
-      "Early-stage experimentation: optimize for signal, not vanity metrics",
+      "Meta Pixel, Conversions API, GA4, GTM, and RedTrack",
+      "Event deduplication, UTMs, click IDs, and attribution troubleshooting",
+      "Funnel analysis, landing page tests, and performance reporting",
     ],
   },
   {
     title: "Positioning to Execution",
     bullets: [
-      "Turn positioning into usable assets: landing pages, emails, ads, proof",
-      "SEO research and content planning",
-      "Market + competitor research for messaging clarity",
+      "Translate technical products and business needs into clear messages",
+      "Build landing pages, ads, emails, and creative briefs",
+      "Use market and competitor research to sharpen positioning",
     ],
   },
   {
     title: "Operating Rhythm & Coordination",
     bullets: [
-      "Build operating systems in Notion/ClickUp",
-      "Weekly priorities, reporting, cross-functional coordination",
-      "Founder-friendly updates and learnings",
+      "Business owner, founder, and client communication",
+      "Coordinate media buyers, developers, and vendors",
+      "Document workflows and improve repeatable processes",
     ],
   },
 ];
@@ -60,20 +59,17 @@ export interface ToolCategory {
 }
 
 export const TOOLS: ToolCategory[] = [
-  { label: "CRM & Lifecycle", tools: ["HubSpot", "GoHighLevel"] },
-  { label: "Analytics & Tracking", tools: ["GA4", "Google Search Console"] },
+  { label: "CRM & Lifecycle", tools: ["GoHighLevel", "HubSpot exposure", "Mailchimp"] },
+  { label: "Analytics & Tracking", tools: ["GA4", "Google Tag Manager", "Meta Pixel", "Meta Conversions API", "RedTrack"] },
   {
     label: "Paid & Distribution",
-    tools: ["Meta Business Suite"],
+    tools: ["Meta Ads", "Google Ads", "Meta Business Suite"],
   },
   {
     label: "Automation & Technical",
-    tools: ["n8n", "Python", "AI APIs", "Webhooks & API Integrations"],
+    tools: ["n8n", "Python", "Webhooks", "API integrations"],
   },
-  { label: "SEO & Research", tools: ["SEMrush", "Ahrefs"] },
+  { label: "Web & Funnel Development", tools: ["GoHighLevel funnels", "HTML", "CSS", "JavaScript", "WordPress", "Elementor"] },
   { label: "Ops & Documentation", tools: ["Notion", "ClickUp"] },
-  {
-    label: "Build & Design",
-    tools: ["Next.js", "Tailwind CSS", "Framer Motion", "Figma"],
-  },
+  { label: "Additional technical exposure", tools: ["Next.js", "Node.js", "Supabase", "GitHub", "AI APIs"] },
 ];

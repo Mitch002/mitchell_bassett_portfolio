@@ -61,7 +61,7 @@ export const WORK_ITEMS: WorkItem[] = [
     role: "Head of Marketing / Growth Lead",
     timeframe: "Active Engagement",
     outcome:
-      "Increased paid user base by 64% through conversion-first strategy — reactivating warm users, targeted crypto acquisition, and community-driven competitions.",
+      "Improved paid conversion through a strategy focused on warm-user reactivation, targeted acquisition, and community-driven competitions.",
     description:
       "Took over all marketing for a live gamified Web3 platform, shifting strategy from vanity metrics to paid conversion optimization.",
     tags: ["Conversion", "Reactivation", "Paid Acquisition", "Community"],
@@ -621,7 +621,7 @@ export const CASE_STUDIES: Record<string, CaseStudy> = {
         content:
           "Through this conversion-first strategy, growth was achieved through paid optimization, reactivation systems, community engagement, and targeted crypto acquisition channels. This was not dependent on a token launch or airdrop hype.",
         bullets: [
-          "Paid user base increased by 64%",
+          "Paid user conversion improved during early testing",
           "Significant portion of growth came from reactivated free users",
           "Cold acquisition spend remained controlled",
           "Conversion became the dominant KPI over vanity metrics",

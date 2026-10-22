@@ -28,12 +28,13 @@ export default function Navbar() {
           </a>
 
           {/* Desktop Nav Links */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden lg:flex items-center gap-6">
             {NAV_LINKS.map((link) => (
               <a
                 key={link.label}
                 href={link.href.startsWith("/") ? link.href : isHome ? link.href : `/${link.href}`}
-                className="text-sm text-gray-400 hover:text-white transition-colors duration-200 font-medium"
+                aria-current={pathname === link.href ? "page" : undefined}
+                className={`text-sm hover:text-white transition-colors duration-200 font-medium ${pathname === link.href ? "text-white" : "text-gray-400"}`}
               >
                 {link.label}
               </a>
@@ -51,8 +52,10 @@ export default function Navbar() {
           {/* Mobile Menu Toggle */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden text-gray-400 hover:text-white transition-colors"
+            className="lg:hidden text-gray-400 hover:text-white transition-colors"
             aria-label="Toggle menu"
+            aria-controls="mobile-navigation"
+            aria-expanded={mobileMenuOpen}
           >
             {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -67,7 +70,8 @@ export default function Navbar() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="md:hidden glass border-t border-white/10 overflow-hidden"
+            id="mobile-navigation"
+            className="lg:hidden glass border-t border-white/10 overflow-hidden"
           >
             <div className="px-4 py-6 space-y-4">
               {NAV_LINKS.map((link) => (

@@ -112,7 +112,7 @@ export default async function Image() {
             fontFamily: "monospace",
           }}
         >
-          GTM Systems &bull; Automation &bull; Execution
+          Growth Marketing &bull; Marketing Operations &bull; Automation
         </div>
 
         {/* Bottom accent line */}

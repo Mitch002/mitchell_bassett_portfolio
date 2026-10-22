@@ -1,8 +1,8 @@
 export const NAV_LINKS = [
+  { label: "Experience", href: "/experience" },
   { label: "Work", href: "#work" },
   { label: "Systems", href: "#systems" },
   { label: "Approach", href: "#approach" },
-  { label: "Stack", href: "#stack" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "#contact" },
 ];
@@ -14,13 +14,8 @@ export const SOCIAL_LINKS = [
     icon: "Linkedin",
   },
   {
-    label: "Twitter / X",
-    href: "https://x.com",
-    icon: "Twitter",
-  },
-  {
     label: "GitHub",
-    href: "https://github.com",
+    href: "https://github.com/Mitch002",
     icon: "Github",
   },
   {

@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import ProofStrip from "@/components/ProofStrip";
+import ExperiencePreview from "@/components/ExperiencePreview";
 import SelectedWork from "@/components/SelectedWork";
 import AutomationsSection from "@/components/AutomationsSection";
 import HowIThink from "@/components/HowIThink";
@@ -15,6 +16,7 @@ export default function Home() {
       <main>
         <Hero />
         <ProofStrip />
+        <ExperiencePreview />
         <SelectedWork />
         <AutomationsSection />
         <HowIThink />
